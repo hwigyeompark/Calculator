@@ -1,21 +1,36 @@
 import React, {Component} from 'react';
 import Number from "./Number";
+import PropTypes from 'prop-types';
 
 class ContactForm extends Component{
+    btnClick = (btnTitle) => {
+        this.handClick(btnTitle);
+    };
+
     render(){
         return(
-            <div>
+            <div className="component-button-panel">
                 <div>
-                    <Number title="7"/><Number title="8"/><Number title="9"/><Number title="/"/><br/>
-                    <Number title="4"/><Number title="5"/><Number title="6"/><Number title="X"/><br/>
-                    <Number title="1"/><Number title="2"/><Number title="3"/><Number title="-"/><br/>
-                    <Number title="1"/><Number title="2"/><Number title="3"/><Number title="+"/><br/>
-                    <Number title="0"/><Number title="."/><Number title="="/><Number title="9"/><br/>
-
-
+                    <Number handClick={this.btnClick} title="C"/><Number handClick={this.btnClick} title="+/-"/><Number handClick={this.btnClick} title="％"/><Number handClick={this.btnClick} title="÷" orange />
+                </div>
+                <div>
+                    <Number handClick={this.btnClick} title="7"/><Number handClick={this.btnClick} title="8"/><Number handClick={this.btnClick} title="9"/><Number handClick={this.btnClick} title="×" orange />
+                </div>
+                <div>
+                    <Number handClick={this.btnClick} title="4"/><Number handClick={this.btnClick} title="5"/><Number handClick={this.btnClick} title="6"/><Number handClick={this.btnClick} title="－" orange/>
+                </div>
+                <div>
+                    <Number handClick={this.btnClick} title="1"/><Number handClick={this.btnClick} title="2"/><Number handClick={this.btnClick} title="3"/><Number handClick={this.btnClick} title="＋" orange/>
+                </div>
+                <div>
+                    <Number handClick={this.btnClick} title="0"/><Number  handClick={this.btnClick}title=""/><Number handClick={this.btnClick} title=""/><Number handClick={this.btnClick} title="＝" orange/>
                 </div>
             </div>
-        )
+        );
     }
 }
+ContactForm.propTypes = {
+    handClick : PropTypes.func
+};
+
 export default ContactForm;
