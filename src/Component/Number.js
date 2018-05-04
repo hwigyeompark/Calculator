@@ -8,22 +8,16 @@ class Number extends Component{
 
     render(){
         const className = [
-            "component-button",
-            this.props.orange ? "orange" : "",
-            this.props.wide ? "wide" : "",
+            "component-button"
         ];
 
         return(
-            <div className={className.join("").trim()}>
-                <button onClick={this.btnClick} style={{ width:'50px', height:'35px'}}>{this.props.title}</button>
-            </div>
-                );
+                <button className={className.join("").trim()} onClick={this.btnClick} style={{ width:'50px', height:'35px'}}>{this.props.title}</button>
+        );
     }
 }
 Number.propTypes = {
     name : PropTypes.string,
-    orange : PropTypes.bool,
-    wide : PropTypes.bool,
     handClick : PropTypes.func
 };
 

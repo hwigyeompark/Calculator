@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ContactForm from './Component/ContactForm';
 import Display from "./Component/Display";
-import calculate from "./Component/calculate";
+import calculate from "./Component/Calculate";
 
 class App extends Component {
   constructor(props){
@@ -15,11 +15,11 @@ class App extends Component {
 
   btnClick = (btnTitle) => {
     this.setState(calculate(this.state, btnTitle));
-  }
+  };
 
   render() {
     return (
-      <div  className="component-app" style={{margin:'0 auto', width:'30%', height:'150px'}}>
+      <div  className="app" style={{margin:'0 auto', width:'30%', height:'150px'}}>
           <Display value={this.state.next || this.state.total || '0'} />
           <ContactForm handClick={this.btnClick}/>
       </div>
